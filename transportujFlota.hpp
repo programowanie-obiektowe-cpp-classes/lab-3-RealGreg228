@@ -6,8 +6,8 @@ unsigned int transportujFlota(unsigned int towar)
 {
     // Twoja implementacja tutaj
     if (towar=0){ return 0; }
-    unsigned int trans_towar;
-    unsigned int count;
+    unsigned int trans_towar = 0;
+    unsigned int count = 0;
     
     Stocznia stocznia{};
 
@@ -15,9 +15,9 @@ unsigned int transportujFlota(unsigned int towar)
         Statek* statek = stocznia();
         unsigned int capacity = statek->transportuj();
         trans_towar += capacity;
-        delete statek;
-
+        
         if(dynamic_cast<Zaglowiec*>(statek)){ count++; }
+        delete statek;
     }
 
     return count;
